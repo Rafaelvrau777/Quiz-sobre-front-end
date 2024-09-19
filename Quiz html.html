@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz Sobre Front End</title>
+    <meta name="description" content="Um quiz interativo para testar conhecimentos">
+    <style>
+        .feedback {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Quiz Interativo Sobre Front End</h1>
+        <p>Teste seus conhecimentos e veja qual pontuação consegue fazer!</p>
+    </header>
+    <main>
+        <h2>Sobre esse Quiz</h2> 
+        <p>Esse site de <strong>Quiz</strong> permite testar conhecimentos básicos sobre tags e propriedades. Ideal para iniciantes, oferece perguntas simples com feedback instantâneo para reforçar o aprendizado de desenvolvimento web.</p>
+        <p>Desafie-se com este quiz!</p>
+        
+        <!-- Pergunta 1 -->
+        <section>
+            <h2>1. O que é CSS?</h2>
+            <form id="form1" onsubmit="return checkAnswer('form1', 'Cascading Style Sheets', 'feedback1')">
+                <input type="radio" value="Cascading Style Sheets" id="p1a" name="pergunta1">  
+                <label for="p1a">Cascading Style Sheets</label><br>
+                <input type="radio" value="Cascading Sheets Style" id="p1b" name="pergunta1">   
+                <label for="p1b">Cascading Sheets Style</label><br>
+                <input type="radio" value="Cascading Style Shets" id="p1c" name="pergunta1">   
+                <label for="p1c">Cascading Style Shets</label><br>
+                <input type="radio" value="Cascding Style Sheets" id="p1d" name="pergunta1">   
+                <label for="p1d">Cascding Style Sheets</label><br>
+                <button type="submit">Enviar</button>
+            </form>
+            <div class="feedback" id="feedback1"></div>
+        </section>
+
+        <!-- Pergunta 2 -->
+        <section> 
+            <h2>2. Qual tag HTML é usada para adicionar uma imagem?</h2>
+            <form id="form2" onsubmit="return checkAnswer('form2', '<img>', 'feedback2')">
+                <input type="radio" value="<imagen>" id="p2a" name="pergunta2">  
+                <label for="p2a">&lt;imagen&gt;</label><br>
+                <input type="radio" value="<pic>" id="p2b" name="pergunta2">   
+                <label for="p2b">&lt;picture&gt;</label><br>
+                <input type="radio" value="<img>" id="p2c" name="pergunta2">   
+                <label for="p2c">&lt;img&gt;</label><br>
+                <input type="radio" value="<scr>" id="p2d" name="pergunta2">   
+                <label for="p2d">&lt;scr&gt;</label><br>
+                <button type="submit">Enviar</button>
+            </form>
+            <div class="feedback" id="feedback2"></div>
+        </section>
+
+        <!-- Pergunta 3 -->
+        <section>
+            <h2>3. Por que usar CSS?</h2>
+            <form id="form3" onsubmit="return checkAnswer('form3', 'Separação de conteúdo e apresentação', 'feedback3')">
+                <input type="radio" value="Separação de conteúdo e apresentação" id="p3a" name="pergunta3">  
+                <label for="p3a">Separação de conteúdo e apresentação</label><br>
+                <input type="radio" value="Substitui a necessidade de HTML" id="p3b" name="pergunta3">   
+                <label for="p3b">Substitui a necessidade de HTML</label><br>
+                <input type="radio" value="Aumenta a capacidade de armazenamento do servidor" id="p3c" name="pergunta3">   
+                <label for="p3c">Aumenta a capacidade de armazenamento do servidor</label><br>
+                <input type="radio" value="Cria funcionalidades interativas" id="p3d" name="pergunta3">   
+                <label for="p3d">Cria funcionalidades interativas</label><br>
+                <button type="submit">Enviar</button>
+            </form>
+            <div class="feedback" id="feedback3"></div>
+        </section>
+
+        <!-- Pergunta 4 -->
+        <section>
+            <h2>4. Qual seletor CSS é usado para aplicar estilos a todos os elementos de um tipo específico, como todos os parágrafos?</h2>
+            <form id="form4" onsubmit="return checkAnswer('form4', 'Elemento', 'feedback4')">
+                <input type="radio" value="Elemento" id="p4a" name="pergunta4">  
+                <label for="p4a">Elemento</label><br>
+                <input type="radio" value="Classe" id="p4b" name="pergunta4">   
+                <label for="p4b">Classe</label><br>
+                <input type="radio" value="ID" id="p4c" name="pergunta4">   
+                <label for="p4c">ID</label><br>
+                <input type="radio" value="Pseudo-classe" id="p4d" name="pergunta4">   
+                <label for="p4d">Pseudo-classe</label><br>
+                <button type="submit">Enviar</button>
+            </form>
+            <div class="feedback" id="feedback4"></div>
+        </section>
+
+        <!-- Pergunta 5 -->
+        <section>
+            <h2>5. Qual propriedade CSS é usada para alterar o tamanho da fonte de um elemento?</h2>
+            <form id="form5" onsubmit="return checkAnswer('form5', 'font-size', 'feedback5')">
+                <input type="radio" value="font-size" id="p5a" name="pergunta5">  
+                <label for="p5a">font-size</label><br>
+                <input type="radio" value="color" id="p5b" name="pergunta5">   
+                <label for="p5b">color</label><br>
+                <input type="radio" value="margin" id="p5c" name="pergunta5">   
+                <label for="p5c">margin</label><br>
+                <input type="radio" value="padding" id="p5d" name="pergunta5">   
+                <label for="p5d">padding</label><br>
+                <button type="submit">Enviar</button>
+            </form>
+            <div class="feedback" id="feedback5"></div>
+        </section>
+    </main>
+    <footer>
+        <p></p>
+    </footer>
+
+    <script>
+        function checkAnswer(formId, correctAnswer, feedbackId) {
+            const form = document.getElementById(formId);
+            const feedback = document.getElementById(feedbackId);
+            const selectedOption = form.querySelector('input[name="pergunta' + formId.charAt(formId.length - 1) + '"]:checked');
+            
+            if (selectedOption) {
+                if (selectedOption.value === correctAnswer) {
+                    feedback.textContent = "Correto!";
+                    feedback.style.color = "green";
+                } else {
+                    feedback.textContent = "Incorreto! A resposta correta é: " + correctAnswer;
+                    feedback.style.color = "red";
+                }
+            } else {
+                feedback.textContent = "Por favor, selecione uma resposta.";
+                feedback.style.color = "orange";
+            }
+            return false; // Prevent form submission
+        }
+    </script>
+</body>
+</html>
